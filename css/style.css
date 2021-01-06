@@ -1,0 +1,30 @@
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;900&family=Raleway:wght@200;300;400;500;600;900&family=Source+Code+Pro:wght@400;700&display=swap');
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -ms-overflow-style:-ms-autohiding-scrollbar;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+
+    background-color: rgba(249,249,249,1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+code {
+    font-family: "Source Code Pro", monospace;
+    font-weight: normal;
+}
+
+.hello-world {
+    text-align: center;
+}
