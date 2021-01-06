@@ -10,14 +10,29 @@ html {
     -ms-overflow-style:-ms-autohiding-scrollbar;
 }
 
+:root {
+    --colour-background: rgba(249,249,249,1);
+    --colour-primary: black;
+    --colour-secondary: #555;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --colour-background: rgba(30,30,30,1);
+        --colour-primary: white;
+        --colour-secondary: rgba(170,170,170,1);
+    }
+}
+
 body {
     font-family: "Raleway", sans-serif;
 
-    background-color: rgba(249,249,249,1);
+    background-color: var(--colour-background);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
+    color: var(--colour-primary);
 }
 
 code {
@@ -42,7 +57,7 @@ body.placeholder {
     margin: 0 0 3rem;
 }
 .hello-world p {
-    color: #555;
+    color: var(--colour-secondary);
     font-size: max(1.5rem,2.5vw);
     font-weight: 200;
     margin: 3rem 0;
