@@ -25,6 +25,27 @@ code {
     font-weight: normal;
 }
 
+body.placeholder {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+}
+
 .hello-world {
     text-align: center;
+    margin: auto;
+}
+
+.hello-world h1 {
+    font-size: 4em;
+    margin: 0 0 3rem;
+}
+.hello-world p {
+    color: #555;
+    font-size: 2em;
+    font-weight: 200;
+    margin: 3rem 0;
+}
+.hello-world hr {
+    width: 25%;
 }
