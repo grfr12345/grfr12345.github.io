@@ -34,6 +34,7 @@ body.placeholder {
 .hello-world {
     text-align: center;
     margin: auto;
+    padding: 0 1rem;
 }
 
 .hello-world h1 {
