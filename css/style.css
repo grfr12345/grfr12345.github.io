@@ -107,7 +107,7 @@ code {
 
 body.placeholder {
     margin: 0;
-    height: 100vh;
+    height: calc(85vh - env(safe-area-inset-bottom));
     display: grid;
 
     line-height: 1.5;
