@@ -19,7 +19,7 @@ html {
     --colour-secondary: #3a3a3a;
 
     --colour-background: #f8f8f8;
-    --colour-background-2: #ddd;
+    --colour-background-secondary: #ddd;
 
     --colour-link: #065B70;
 
@@ -36,8 +36,8 @@ html {
         --colour-primary: white;
         --colour-secondary: #ddd;
 
-        --colour-background: #111;
-        --colour-background-2: #333;
+        --colour-background: #1e1e1e;
+        --colour-background-secondary: #2d2d2d;
 
         --colour-link: #0AADD6;
 
