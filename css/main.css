@@ -151,6 +151,7 @@ main > article {
 
 .site-header, .site-footer {
   padding: 1.5rem 0;
+  z-index: 100;
 }
 @media (min-width: 37.5em) {
   .site-header, .site-footer {
