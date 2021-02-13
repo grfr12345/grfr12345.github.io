@@ -90,14 +90,27 @@ html {
 }
 
 body {
-    font-family: "Raleway", sans-serif;
-
+    font: 16px / 1.5 var(--font-text);
+    color: var(--colour-primary);
     background-color: var(--colour-background);
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif;
     color: var(--colour-primary);
+}
+
+a, a:hover, a:focus {
+    color: var(--colour-link);
+}
+a:hover, a:focus {
+    opacity: .8;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
 }
 
 code {
@@ -110,7 +123,7 @@ body.placeholder {
     height: calc(85vh - env(safe-area-inset-bottom));
     display: grid;
 
-    line-height: 1.5;
+    /*line-height: 1.5;*/
 }
 
 .hello-world {
@@ -120,13 +133,11 @@ body.placeholder {
 }
 
 .hello-world h1 {
-    font-size: max(2rem,3.5vw);
     font-size: 2.5rem;
     margin: 0 0 2rem;
 }
 .hello-world p {
     color: var(--colour-secondary);
-    font-size: max(1.5rem,2.5vw);
     font-size: 1.5rem;
     font-weight: 200;
     margin: 2rem 0;
