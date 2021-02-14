@@ -223,6 +223,7 @@ main > article {
   color: var(--colour-secondary);
   font-family: var(--font-display);
   line-height: 1.5;
+  max-width: 40em;
   font-size: 1em;
 }
 @media (min-width: 37.5em) {
