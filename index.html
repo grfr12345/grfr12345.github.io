@@ -16,16 +16,3 @@ full_width: true
         </div>
     </div>
 </section>
-<section class="projects">
-    {% assign tags =  site.projects | map: 'tags' | uniq %}
-    {% for tag in tags %}
-    <h2>{{ tag }}</h2>
-    <ul>
-    {% for project in site.projects %}
-    {% if project.tags contains tag %}
-    <li>{{ project.title }}</li>
-    {% endif %}
-    {% endfor %}
-    </ul>
-    {% endfor %}
-</section>
