@@ -1,0 +1,6 @@
+- name: LinkedIn
+  url: https://www.linkedin.com/in/george-richardson
+  icon: fab fa-linkedin-in
+- name: Email
+  url: mailto:grrichardson15@gmail.com
+  icon: fa fa-envelope

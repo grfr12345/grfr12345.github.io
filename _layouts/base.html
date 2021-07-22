@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" sizes="any" href="{{ site.url }}/favicon2.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="{{ site.url }}/favicon2.svg" color="#000000">
+
+    {% include seo.html %}
+
+    {% include styles.html %}
+
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+</head>
+<body class="page-{{ page.title | slugify }}">
+    {% include site-header.html %}
+    {% if page.full_width %}
+    <div class="container full-width">
+    {% else %}
+    <div class="container">
+    {% endif %}
+    <div class="container__inner">
+    {{ content }}
+    </div>
+    </div>
+    {% include site-footer.html %}
+
+    <script>
+        window.onload = function() {
+            let toggleButton = document.getElementById("nav-toggle");
+
+            toggleButton.onclick = function() {
+                let header = document.getElementById("site-header");
+                let headerHeight = header.scrollHeight;
+                
+                let footer = document.getElementById("site-footer");
+                let footerHeight = footer.scrollHeight;
+                
+                let root = document.documentElement;
+                root.style.setProperty("--header-height", headerHeight + "px");
+                root.style.setProperty("--footer-height", footerHeight + "px");
+                                
+                document.body.classList.toggle("nav-open");
+            }
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" sizes="any" href="http://0.0.0.0:4000/favicon2.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="http://0.0.0.0:4000/favicon2.svg" color="#000000">
+
+    <!-- Primary Meta Tags -->
+<title>Contact – George Richardson</title>
+<meta name="title" content="Contact – George Richardson">
+<meta name="description" content="Have a question, comment, or query? Get in touch!">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://0.0.0.0:4000/contact.html">
+<meta property="og:title" content="Contact – George Richardson">
+<meta property="og:description" content="Have a question, comment, or query? Get in touch!">
+<meta property="og:image" content="http://0.0.0.0:4000/assets/images/headshot-resized.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="http://0.0.0.0:4000/contact.html">
+<meta property="twitter:title" content="Contact – George Richardson">
+<meta property="twitter:description" content="Have a question, comment, or query? Get in touch!">
+<meta property="twitter:image" content="http://0.0.0.0:4000/assets/images/headshot-resized.jpg">
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Code+Pro:wght@400;700&display=swap">
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
+</head>
+<body class="page-contact">
+    <header id="site-header" class="header site-header">
+    <div class="header__inner">
+        <div class="site-title name"><a href="/">George Richardson</a></div>
+        <nav id="site-nav" class="nav site-nav">
+    
+    <a href="/about.html" class="nav-item nav-item-about">
+        About
+    </a>
+    
+    <a href="/projects.html" class="nav-item nav-item-projects">
+        Projects
+    </a>
+    
+    <a href="/contact.html" class="nav-item nav-item-contact current">
+        Contact
+    </a>
+    
+</nav>
+        <button id="nav-toggle" class="mobile-nav-toggle" type="button" name="button">
+            <i class="nav-bars fa fa-bars"></i>
+            <i class="nav-cross fa fa-times"></i>
+        </button>
+    </div>
+</header>
+    
+    <div class="container">
+    
+    <div class="container__inner">
+    
+<header class="header page-header">
+    <h1 class="page-title">Contact</h1>
+</header>
+
+
+<p>Please get in touch using the form below, or <a href="mailto:grrichardson15@gmail.com">email me directly</a>.</p>
+
+<div id="success" class="alert success" aria-hidden="true">
+    <div class="checkmark">
+        <i class="fa fa-check-circle"></i>
+    </div>
+    <div class="text">
+        <p class="message">Form submission successful. Thanks for getting in touch!</p>
+    </div>
+</div>
+<div id="error" class="alert error" aria-hidden="true">
+    <div class="checkmark">
+        <i class="fa fa-times-circle"></i>
+    </div>
+    <div class="text">
+        <p class="message">An error occurred. Please try again, or <a href="mailto:grrichardson15@gmail.com">email me directly</a>.</p>
+    </div>
+</div>
+
+<form action="https://formspree.io/f/xzbyayzg" method="POST" id="contact-form" class="contact-form">
+    <div class="field-group">
+        <div class="field">
+            <label for="first_name">First Name<span class="required-indicator" aria-hidden="true">*</span></label>
+            <input id="first_name" name="first_name" type="text" required>
+        </div>
+        <div class="field">
+            <label for="last_name">Last Name<span class="required-indicator" aria-hidden="true">*</span></label>
+            <input id="last_name" name="last_name" type="text" required>
+        </div>
+    </div>
+    <div class="field">
+        <label for="email">Email<span class="required-indicator" aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required>
+    </div>
+    <div class="field">
+        <label for="subject">Subject<span class="required-indicator" aria-hidden="true">*</span></label>
+        <input id="subject" name="subject" type="text" required>
+    </div>
+    <div class="field">
+        <label for="message">Message<span class="required-indicator" aria-hidden="true">*</span></label>
+        <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+    </div>
+    <button id="submit-button" tabindex="0">Submit Form</button>
+    <p id="contact-form-status"></p>
+</form>
+
+<script>
+    var form = document.getElementById("contact-form");
+    let button = document.getElementById("submit-button");
+    
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        button.setAttribute("disabled", "true");
+        button.innerText = "Submitting...";
+        
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+
+            window.scrollTo(0,0);
+
+            let success = document.getElementById("success");
+            success.style.display = "grid";
+            success.style.opacity = "1";
+
+            button.removeAttribute("disabled");
+            button.innerText = "Submit Form";
+        }).catch(error => {
+            let success = document.getElementById("error");
+            success.style.display = "grid";
+            success.style.opacity = "1";
+
+            window.scrollTo(0,0);
+
+            button.removeAttribute("disabled");
+            button.innerText = "Submit Form";
+        });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+    </div>
+    </div>
+    <footer id="site-footer" class="footer site-footer">
+    <div class="footer__inner">
+        <div id="hcard-George-Richardson" class="vcard footer-item">
+            <div>
+                <a class="url fn" href="http://0.0.0.0:4000"><span class="site-title">George Richardson</span></a>
+            </div>
+            <div>
+                <a class="email" href="mailto:grrichardson15@gmail.com">grrichardson15@gmail.com</a>
+            </div>
+        </div>
+        <div class="social-links footer-item">
+            
+            <a href="https://www.linkedin.com/in/george-richardson" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            
+            <a href="mailto:grrichardson15@gmail.com" target="_blank" aria-label="Email">
+                <i class="fa fa-envelope"></i>
+            </a>
+            
+        </div>
+    </div>
+</footer>
+
+    <script>
+        window.onload = function() {
+            let toggleButton = document.getElementById("nav-toggle");
+
+            toggleButton.onclick = function() {
+                let header = document.getElementById("site-header");
+                let headerHeight = header.scrollHeight;
+                
+                let footer = document.getElementById("site-footer");
+                let footerHeight = footer.scrollHeight;
+                
+                let root = document.documentElement;
+                root.style.setProperty("--header-height", headerHeight + "px");
+                root.style.setProperty("--footer-height", footerHeight + "px");
+                                
+                document.body.classList.toggle("nav-open");
+            }
+        };
+    </script>
+</body>
+</html>

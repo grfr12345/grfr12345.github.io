@@ -1,0 +1,111 @@
+.project {
+
+    &--header__section {
+        display: grid;
+        row-gap: 1.5rem;
+        column-gap: 2.5rem;
+        
+        grid-template-areas: "header" "caption" "image" "description";
+        
+        @media (min-width: $breakpoint-medium) {
+            grid-template-columns: 1fr 1.2fr;
+            grid-template-areas: "header image" "caption image" "description description";
+            grid-template-rows: auto auto 1fr;
+
+            padding: 1rem 0;
+        }
+        @media (min-width: $breakpoint-large) {
+            grid-template-columns: 1fr 1.5fr;
+        }
+        @media (min-width: $breakpoint-large) {
+            grid-template-areas: "header image" "caption image" "description image";
+            grid-template-rows: auto auto 1fr;
+            grid-template-columns: 2fr 3.2fr;
+            
+            padding: 2rem 0;
+        }
+    }
+    
+    &--header {
+        grid-area: header;
+
+        margin: 0;
+    }
+
+    &--caption {
+        grid-area: caption;
+    }
+
+    &--description {
+        grid-area: description;
+
+        line-height: 1.8;
+    }
+
+    &--image {
+        grid-area: image;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &--credits__section {
+        display: grid;
+        column-gap: 2.5rem;
+        row-gap: 1rem;
+        
+        grid-template-areas: "heading" "credits" "image";
+
+        @media (min-width: $breakpoint-medium) {
+            
+            grid-template-areas: "image heading"
+            "image credits";
+            grid-template-rows: auto 1fr;
+            grid-template-columns: 1fr 1fr;
+            
+        }
+        @media (min-width: $breakpoint-full) {
+            grid-template-columns: 3.2fr 2fr;
+        }
+        
+        padding: 2rem 0;
+        
+        .credits-heading {
+            grid-area: heading;
+        }
+
+        .credits {
+            grid-area: credits;
+
+            .credit {
+                display: block;
+
+                margin-block-end: 1rem;
+
+                .role, .person {
+                    display: block;
+
+                    @media(min-width: $breakpoint-small) {
+                        display: inline;
+                    }
+                    @media(min-width: $breakpoint-large) {
+                        display: inline;
+                    }
+                    @media(min-width: $breakpoint-full) {
+                        display: inline;
+                    }
+                }
+
+                .role {
+                    font-weight: 300;
+                }
+                .person {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

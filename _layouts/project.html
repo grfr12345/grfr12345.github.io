@@ -1,0 +1,48 @@
+---
+layout: base
+---
+{% assign project = page %}
+{% assign credit_size = project.credits | size %}
+<main class="project">
+    <div class="project--header__section">
+        <header class="header page-header project--header">
+            <h1 class="page-title project-title">{{ project.title }}</h1>
+            <p class="project--role">{{ project.date | date_to_string }} – {{ project.role }} </p>
+        </header>
+        {% if project.description %}
+        <div class="project--caption">
+            <blockquote>
+                <p>{{ project.description }}</p>
+            </blockquote>
+        </div>
+        {% endif %}
+        <div class="project--description">{{ content }}</div>
+        <div class="project--image">
+            <img src="{{ project.thumbnail }}" alt="">
+        </div>
+    </div>
+    <section class="project--credits__section">
+        {% if credit_size != 0 %}
+        <h2 class="credits-heading">Credits</h2>
+        {% endif %}
+        <div class="project--image">
+            <figure>
+                <img src="{{ project.credits_thumbnail }}" alt="" loading="lazy">
+                {% if project.photos %}
+                <figcaption>
+                    <span class="role">Photography by </span>
+                    <span class="person">{{ project.photos }}</span>
+                </figcaption>
+                {% endif %}
+            </figure>
+        </div>
+        <div class="credits">
+            {% for credit in project.credits %}
+            <p class="credit">
+                <span class="role">{{ credit[0] }}</span>
+                <span class="person">{{ credit[1] | join: ", " }}</span>
+            </p>
+            {% endfor %}
+            </div>
+    </section>
+</main>

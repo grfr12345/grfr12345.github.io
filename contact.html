@@ -1,0 +1,95 @@
+---
+layout: default
+title: Contact
+
+description: Have a question, comment, or query? Get in touch!
+---
+
+<p>Please get in touch using the form below, or <a href="mailto:{{ site.email }}">email me directly</a>.</p>
+
+<div id="success" class="alert success" aria-hidden="true">
+    <div class="checkmark">
+        <i class="fa fa-check-circle"></i>
+    </div>
+    <div class="text">
+        <p class="message">Form submission successful. Thanks for getting in touch!</p>
+    </div>
+</div>
+<div id="error" class="alert error" aria-hidden="true">
+    <div class="checkmark">
+        <i class="fa fa-times-circle"></i>
+    </div>
+    <div class="text">
+        <p class="message">An error occurred. Please try again, or <a href="mailto:{{ site.email }}">email me directly</a>.</p>
+    </div>
+</div>
+
+<form action="https://formspree.io/f/xzbyayzg" method="POST" id="contact-form" class="contact-form">
+    <div class="field-group">
+        <div class="field">
+            <label for="first_name">First Name<span class="required-indicator" aria-hidden="true">*</span></label>
+            <input id="first_name" name="first_name" type="text" required>
+        </div>
+        <div class="field">
+            <label for="last_name">Last Name<span class="required-indicator" aria-hidden="true">*</span></label>
+            <input id="last_name" name="last_name" type="text" required>
+        </div>
+    </div>
+    <div class="field">
+        <label for="email">Email<span class="required-indicator" aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required>
+    </div>
+    <div class="field">
+        <label for="subject">Subject<span class="required-indicator" aria-hidden="true">*</span></label>
+        <input id="subject" name="subject" type="text" required>
+    </div>
+    <div class="field">
+        <label for="message">Message<span class="required-indicator" aria-hidden="true">*</span></label>
+        <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+    </div>
+    <button id="submit-button" tabindex="0">Submit Form</button>
+    <p id="contact-form-status"></p>
+</form>
+
+<script>
+    var form = document.getElementById("contact-form");
+    let button = document.getElementById("submit-button");
+    
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        button.setAttribute("disabled", "true");
+        button.innerText = "Submitting...";
+        
+        var data = new FormData(event.target);
+        fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            status.innerHTML = "Thanks for your submission!";
+            form.reset()
+
+            window.scrollTo(0,0);
+
+            let success = document.getElementById("success");
+            success.style.display = "grid";
+            success.style.opacity = "1";
+
+            button.removeAttribute("disabled");
+            button.innerText = "Submit Form";
+        }).catch(error => {
+            let success = document.getElementById("error");
+            success.style.display = "grid";
+            success.style.opacity = "1";
+
+            window.scrollTo(0,0);
+
+            button.removeAttribute("disabled");
+            button.innerText = "Submit Form";
+        });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>

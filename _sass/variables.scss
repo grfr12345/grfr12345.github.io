@@ -1,0 +1,89 @@
+/* Sass variables */
+$breakpoint-extra-small: 23em;
+$breakpoint-small: 37.5em;
+$breakpoint-medium: 50em;
+$breakpoint-large: 57em;
+$breakpoint-full: 68.75em;
+
+@mixin no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/* Base variables */
+:root {
+    --content-max-width: 1100px;
+    --colour-primary: #000000;
+    --colour-secondary: #3A3A3A;
+    --colour-background: #f8f8f8;
+    --colour-background-secondary: #DDDDDD;
+    --colour-link: #065B70;
+    --colour-input-background: #fafafa;
+    --font-text: "Montserrat", sans-serif;
+    --font-display: "Montserrat", sans-serif;
+    --font-serif: "", serif;
+    --readable-inset: min( 1.2rem, ( var(--content-max-width) - 100vw)/2 + 1.2rem);
+
+    /* Header height for offsetting the body content when the mobile nav is open. This is updated on page load. */
+    --header-height: 72px;
+    --footer-height: 148px;
+}
+
+/* Changes to colours for dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+      --colour-primary: white;
+      --colour-secondary: #DDDDDD;
+      --colour-background: #1e1e1e;
+      --colour-background-secondary: #2d2d2d;
+      --colour-link: #0AADD6;
+      --colour-input-background: #222;
+    }
+}
+
+/* Header font */
+:root {
+    --font-site-title-weight: 600;
+    --font-site-nav-item-weight: 500;
+    --font-site-title: 600 1.2em/1em var(--font-display);
+    --site-title-letter-spacing: initial;
+    --site-nav-item-font-size: 1.3em;
+    --site-nav-item-font: var(--font-site-nav-item-weight) 1.3em/1 var(--font-display);
+    --site-nav-item-spacing: 0;
+}
+
+@media (min-width: $breakpoint-extra-small) {
+    :root {
+        --font-site-title: 600 1.5em/1em var(--font-display);
+    }
+}
+@media (min-width: $breakpoint-small) {
+    :root {
+        --font-site-title: 600 1.5em/1em var(--font-display);
+        --site-nav-item-font-size: .9em;
+        --site-nav-item-font: var(--font-site-nav-item-weight) .9em/1 var(--font-display);
+        --site-nav-item-spacing: .7rem;
+    }
+}
+@media (min-width: $breakpoint-medium) {
+    :root {
+        --font-site-title: 600 1.7em/1em var(--font-display);
+        --site-title-letter-spacing: .15em;
+        --site-nav-item-font-size: 1.1em;
+        --site-nav-item-font: var(--font-site-nav-item-weight) 1.1em/1 var(--font-display);
+        --site-nav-item-spacing: 1rem;
+    }
+}
+@media (min-width: $breakpoint-large) {
+    :root {
+        --font-site-title: 600 2em/1em var(--font-display);
+        --site-nav-item-font-size: 1.3em;
+        --site-nav-item-font: var(--font-site-nav-item-weight) 1.3em/1 var(--font-display);
+        --site-nav-item-spacing: 1.5rem;
+    }
+}

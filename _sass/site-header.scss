@@ -1,0 +1,111 @@
+.header {
+    font-family: var(--font-display);
+}
+
+.header__inner, .footer__inner {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--readable-inset);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+}
+.header a, .footer a {
+    text-decoration: none;
+}
+
+.site-header .header__inner {
+    align-items: center;
+    
+    .site-title { 
+        font: var(--font-site-title);
+
+        @include no-select;
+    }
+}
+@media (min-width: 37.5em) {
+    .site-header .header__inner {
+        align-items: baseline;
+    }
+}
+.site-header .site-title .edition {
+    text-transform: none;
+    font-weight: 300;
+    letter-spacing: normal;
+    color: var(--colour-secondary);
+    border-inline-start: 1px solid;
+    margin-inline-start: 0.7rem;
+    padding-inline-start: 0.7rem;
+}
+
+.site-header, .site-footer {
+    padding: 1.5rem 0;
+    z-index: 100;
+
+    .site-title {
+        text-transform: uppercase;
+        letter-spacing: var(--site-title-letter-spacing);
+        font-weight: var(--font-site-title-weight);
+    }
+}
+@media (min-width: 37.5em) {
+    .site-header, .site-footer {
+        padding: 3rem 0 2rem;
+    }
+}
+.site-header a, .site-footer a {
+    color: inherit;
+}
+
+.site-footer {
+    margin-top: 1rem;
+    margin-bottom: env(safe-area-inset-bottom);
+}
+.site-footer .name {
+    font-size: 1rem;
+}
+.site-footer .social-links {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+.site-footer .social-links a {
+    margin-left: 1rem;
+}
+.site-footer .social-links a:hover {
+    opacity: 1;
+    fill-opacity: 0.8;
+}
+.site-footer .social-links a:first-child {
+    margin-left: 0;
+}
+.site-footer .footer-item {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+    justify-content: center;
+    text-align: center;
+    color: var(--colour-secondary);
+}
+.site-footer .footer-item:last-child {
+    margin-bottom: 0;
+}
+@media (min-width: 37.5em) {
+    .site-footer .footer-item {
+        flex-basis: auto;
+        margin-bottom: 0;
+        justify-content: initial;
+        text-align: inherit;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.site-footer {
+    margin-top: auto;
+}

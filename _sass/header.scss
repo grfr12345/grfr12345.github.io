@@ -1,0 +1,20 @@
+.header {
+    font-family: var(--font-display);
+}
+
+.header__inner, .footer__inner {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--readable-inset);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+}
+.header a, .footer a {
+    text-decoration: none;
+}
+
+@import "site-header";
+@import "page-header";

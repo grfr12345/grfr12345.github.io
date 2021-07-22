@@ -1,0 +1,27 @@
+.page-header {
+    margin-bottom: 1.5rem;
+}
+.page-header .page-title {
+    color: var(--colour-primary);
+    font-family: var(--font-display);
+    line-height: 1.5;
+    font-size: 2em;
+    font-weight: 600;
+}
+@media (min-width: 37.5em) {
+    .page-header .page-title {
+        font-size: 2.8em;
+    }
+}
+.page-header .page-subtitle {
+    color: var(--colour-secondary);
+    font-family: var(--font-display);
+    line-height: 1.5;
+    max-width: 40em;
+    font-size: 1em;
+}
+@media (min-width: 37.5em) {
+    .page-header .page-subtitle {
+        font-size: 1.5em;
+    }
+}

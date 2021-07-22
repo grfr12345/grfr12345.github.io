@@ -1,0 +1,119 @@
+/* NAVIGATION */
+.mobile-nav-toggle {
+    display: block;
+    border: 0;
+    background: 0;
+    padding: 0;
+    font: var(--font-site-title);
+    cursor: pointer;
+    
+    @media (min-width: $breakpoint-small) {
+        display: none;
+    }
+    
+    &:hover {
+        color: var(--colour-secondary);
+    }
+
+    .nav-cross {
+        display: none;
+    }
+    .nav-bars {
+        display: block;
+    }
+}
+
+
+
+.site-nav {
+    display: none;
+
+    /* unconditonally show the navigation on larger screens */
+    @media (min-width: $breakpoint-small) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.site-nav .nav-item {
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: var(--site-nav-item-font-size, 1.3em);
+    font: var(--site-nav-item-font);
+    margin-right: var(--site-nav-item-spacing, 1.5rem);
+}
+.site-nav .nav-item:hover {
+    color: var(--colour-secondary);
+}
+.site-nav .nav-item:last-child {
+    margin-right: 0;
+}
+.site-nav .nav-item.current {
+    border-bottom: 1px solid;
+}
+
+.nav-open .mobile-nav-toggle .nav-cross {
+    display: block;
+}
+.nav-open .mobile-nav-toggle .nav-bars {
+    display: none;
+}
+
+@media (max-width: $breakpoint-small) {
+    body.nav-open {
+        overflow: hidden;
+        
+        padding-block-start: var(--header-height);
+
+        .container {
+            pointer-events: none;
+            @include no-select;
+        }
+        
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        .site-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        .site-title, .mobile-nav-toggle {
+            z-index: 2;
+        }
+        
+        .site-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.6);
+            background-color: var(--colour-background);
+            padding-inline-start: 10vw;
+            padding-inline-end: 10vw;
+            padding-block-start: calc(2rem + var(--header-height));
+            padding-block-end: calc(2rem + var(--footer-height));
+            display: block;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            .nav-item {
+                padding: 2rem;
+                display: block;
+
+                &.current {
+                    border: 0;
+                }
+            }
+        }
+    }
+}
