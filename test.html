@@ -5,41 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>test page</title>
 
-        <style media="screen">
-        button, input, optgroup, select, textarea {
-            margin: 0;
-            font: inherit;
-            color: inherit;
-        }
-        html {
-            background: var(--colour-background);
-        }
-        body {
-            font: 16px / 24px "Raleway", sans-serif;
-            color: var(--colour-primary);
-        }
-        body.nav-open {
-            overflow: hidden;
-        }
-
-        a, a:hover, a:focus {
-            color: var(--colour-link);
-        }
-        a:hover, a:focus {
-            opacity: .8;
-        }
-        .site-footer {
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-        </style>
-
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@200;300;400;500;600;900&family=Source+Code+Pro:wght@400;700&display=swap">
         <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="css/style.css?v=1.2">
+        <link rel="stylesheet" href="css/main.css">
         <link rel="icon" sizes="any" href="https://grichardson.com.au/favicon2.svg" type="image/svg+xml">
         <link rel="mask-icon" href="https://grichardson.com.au/favicon2.svg" color="#000000">
         <link rel="canonical" href="https://grichardson.com.au/test.html" />
@@ -50,18 +19,68 @@
         <meta name="description" content="Welcome to george's website.">
 
         <style media="screen">
-            body {
-                line-height: 1.5;
-            }
-        </style>
+        .hello-world {
+            text-align: center;
+            margin: auto;
+            padding: 0 1rem;
+        }
 
+        .hello-world h1 {
+            font-size: 2.5rem;
+            margin: 0 0 2rem;
+        }
+        .hello-world p {
+            color: var(--colour-secondary);
+            font-size: 1.5rem;
+            font-weight: 200;
+            margin: 2rem 0 0;
+        }
+        .hello-world hr {
+            width: 25%;
+            margin: auto;
+        }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .site-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        main.placeholder {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+        }
+        </style>
     </head>
-    <body class="placeholder">
-        <div class="hello-world">
-            <h1>george's website</h1>
-            <hr>
-            <p>coming soon</p>
-        </div>
+    <body>
+        <header class="header site-header">
+            <div class="header__inner">
+                <div class="site-title name"><a href="/">George&nbsp;Richardson</a></div>
+                <nav id="site-nav" class="nav site-nav">
+                    <a href="#" class="nav-item">About</a>
+                    <a href="/work.html" class="nav-item">Work</a>
+                    <a href="/contact.html" class="nav-item current">Contact</a>
+                </nav>
+                <button id="nav-toggle" class="mobile-nav-toggle" type="button" name="button">
+                    <i class="nav-bars fa fa-bars"></i>
+                    <i class="nav-cross fa fa-times"></i>
+                </button>
+            </div>
+        </header>
+        <main class="placeholder">
+            <div class="hello-world">
+                <h1>george's website</h1>
+                <hr>
+                <p>coming soon</p>
+            </div>
+        </main>
         <footer class="footer site-footer">
             <div class="footer__inner">
                 <div id="hcard-George-Richardson" class="vcard footer-item">
