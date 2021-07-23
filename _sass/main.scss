@@ -344,3 +344,44 @@ form {
         }
     }
 }
+
+.card-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 3vw;
+
+    list-style: none;
+
+    li {
+        display: contents;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        &--caption {
+            order: 2;
+            display: block;
+            flex-basis: auto;
+        }
+        
+        &--image {
+            order: 1;
+            flex-basis: 100%;
+
+            width: 100%;
+            height: auto;
+            display: block;
+
+            img {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+}
