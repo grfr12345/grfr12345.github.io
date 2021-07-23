@@ -1,0 +1,15 @@
+{% if include.header_level %}
+{% assign header = include.header_level %}
+{% else %}
+{% assign header = "h2" %}
+{% endif %}
+
+<div class="card">
+    <div class="card--caption">
+        <{{ header }} class="card--title"><a href="{{ include.url }}">{{ include.title }}</a></{{ header }}>
+        {% if include.subtitle %}
+        <p class="card--subtitle">{{ include.subtitle }}</p>
+        {% endif %}
+    </div>
+    {% include image.html class="card--image" url=include.url image=include.image %}
+</div>
