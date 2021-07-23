@@ -5,6 +5,16 @@ thumbnail: /assets/images/return-to-normal-01-small.jpg
 credits_thumbnail: /assets/images/return-to-normal-02.jpg
 tags: dance eoyd20
 
+images:
+    -
+        url: /assets/images/return-to-normal-01-small.jpg
+        width: 800
+        height: 481
+    -
+        url: /assets/images/return-to-normal-02-small.jpg
+        width: 800
+        height: 517
+
 description: "In a year where everyone has had to become accustomed to uncertainty, the feeling of starting and stopping has become a condition of living."
 
 

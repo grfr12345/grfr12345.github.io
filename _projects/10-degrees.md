@@ -5,6 +5,16 @@ thumbnail: /assets/images/10-degrees-01.jpg
 credits_thumbnail: /assets/images/10-degrees-02.jpg
 tags: dance
 
+images:
+    -
+        url: /assets/images/10-degrees-01.jpg
+        width: 1100
+        height: 577
+    -
+        url: /assets/images/10-degrees-02.jpg
+        width: 1100
+        height: 645
+
 description: A collaborative, interdisciplinary project presented by VCA Dance and Design and Production students.
 
 role: Technical Manager

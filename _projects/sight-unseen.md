@@ -5,6 +5,16 @@ thumbnail: /assets/images/sight-unseen-01-small.jpg
 credits_thumbnail: /assets/images/sight-unseen-02.jpg
 tags: dance eoyd20
 
+images:
+    -
+        url: /assets/images/sight-unseen-01-small.jpg
+        width: 800
+        height: 509
+    -
+        url: /assets/images/sight-unseen-02-small.jpg
+        width: 800
+        height: 442
+
 description: "Sight Unseen: without the opportunity to look at the object in question beforehand."
 
 role: Assistant Stage Manager

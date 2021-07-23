@@ -5,6 +5,16 @@ thumbnail: /assets/images/surge-01-small.jpg
 credits_thumbnail: /assets/images/surge-02.jpg
 tags: dance eoyd20
 
+images:
+    -
+        url: /assets/images/surge-01-small.jpg
+        width: 800
+        height: 534
+    -
+        url: /assets/images/surge-02-small.jpg
+        width: 800
+        height: 474
+
 description: "Moving from order to chaos, from conformity to abandonment"
 
 role: Assistant Stage Manager

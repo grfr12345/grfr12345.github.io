@@ -5,6 +5,17 @@ thumbnail: /assets/images/our-house-01-small.jpg
 credits_thumbnail: /assets/images/our-house-02.jpg
 tags: "music theatre"
 
+images:
+    -
+        url: /assets/images/our-house-01-small.jpg
+        width: 800
+        height: 533
+    -
+        url: /assets/images/our-house-02-small.jpg
+        width: 800
+        height: 533
+
+
 description: Camden lad Joe Casey on the night of his 16th birthday, makes a decision that will change his life.
 
 role: Head Electrician
