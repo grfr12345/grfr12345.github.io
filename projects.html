@@ -4,20 +4,10 @@ title: Projects
 
 description: George Richardson has worked in a variety of roles over a range of performance types including Music, Dance, and Music Theatre.
 ---
-<ul class="gallery">
+<ul class="gallery card-gallery">
     {% for project in site.projects reversed %}
-    <li class="gallery-card">
-        <div class="gallery-card--image">
-            <a class="gallery-card--image__inner" href="{{ project.url }}">
-                <img src="{{ project.thumbnail }}" alt="" srcset="">
-            </a>
-        </div>
-        <div class="gallery-card--caption">
-            <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
-            {% if project.role %}
-            <p class="role">{{ project.role }}</p>
-            {% endif %}
-        </div>
+    <li>
+        {% include card.html title=project.title subtitle=project.role url=project.url image=project.images.first header_level="h2" %}
     </li>
     {% endfor %}
 </ul>
