@@ -1,0 +1,14 @@
+<div class="image-container{% if include.class %} {{ include.class }}{% endif %}">
+    {% if include.url %}
+    <a href="{{ include.url }}">
+        {% endif %}
+        <img src="{{ include.image.url }}" 
+        alt="{% if include.image.alt %}{{ include.image.alt }}{% endif %}" 
+        {% if include.image.width %}width="{{ include.image.width }}"{% endif %} 
+        {% if include.image.height %}height="{{ include.image.height }}"{% endif %}
+        {% if include.loading %}loading="{{ include.loading }}"{% endif %}
+        >
+        {% if include.url %}
+    </a>
+    {% endif %}
+</div>
