@@ -3,9 +3,11 @@ layout: base
 ---
 {% assign project = page %}
 {% assign credit_size = project.credits | size %}
+{% assign main_image = project.images[0] %}
+{% assign credit_image = project.images[1] %}
 <main class="project">
     <div class="project--header__section">
-        <header class="header page-header project--header">
+        <header class="header page-header project--header"> 
             <h1 class="page-title project-title">{{ project.title }}</h1>
             <p class="project--role">{{ project.date | date_to_string }} – {{ project.role }} </p>
         </header>
@@ -17,9 +19,7 @@ layout: base
         </div>
         {% endif %}
         <div class="project--description">{{ content }}</div>
-        <div class="project--image">
-            <img src="{{ project.thumbnail }}" alt="">
-        </div>
+        {% include image.html class="project--image" image=main_image %}
     </div>
     <section class="project--credits__section">
         {% if credit_size != 0 %}
@@ -27,7 +27,7 @@ layout: base
         {% endif %}
         <div class="project--image">
             <figure>
-                <img src="{{ project.credits_thumbnail }}" alt="" loading="lazy">
+                {% include image.html image=credit_image loading="lazy" %}
                 {% if project.photos %}
                 <figcaption>
                     <span class="role">Photography by </span>
