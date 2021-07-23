@@ -4,6 +4,10 @@ title: About
 
 bio_title: George Richardson
 headshot_url: /assets/images/headshot-resized-cropped.jpg
+headshot:
+    url: /assets/images/headshot-resized-cropped.jpg
+    width: 800
+    height: 963
 ---
 
 George is a Stage Manager and Theatre Technician based in Melbourne currently completing a BFA (Design and Production) specialising in Stage Management. George has a particular passion for music, dance, and music theatre performance.  
