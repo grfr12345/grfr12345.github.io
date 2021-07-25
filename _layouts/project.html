@@ -5,6 +5,7 @@ layout: base
 {% assign credit_size = project.credits | size %}
 {% assign main_image = project.images[0] %}
 {% assign credit_image = project.images[1] %}
+{% assign external_websites_size = project.external_websites | size %}
 <main class="project">
     <div class="project--header__section">
         <header class="header page-header project--header"> 
@@ -45,4 +46,11 @@ layout: base
             {% endfor %}
             </div>
     </section>
+    {% if page.external_websites_size != 0 %}
+    <aside class="external-links button-collection">
+        {% for site in project.external_websites %}
+        {% include external-button.html url=site.url content=site.name %}
+        {% endfor %}
+    </aside>
+    {% endif %}
 </main>
