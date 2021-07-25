@@ -277,6 +277,16 @@ form {
 
             }
         }
+
+        &.button-outline {
+            background-color: var(--colour-background);
+            color: var(--colour-primary);
+            border-width: 2px;
+
+            &:hover, &:focus {
+                background-color: var(--colour-background-secondary);
+            }
+        }
         
         &:disabled {
             background: var(--colour-secondary);
@@ -309,6 +319,12 @@ form {
 
         max-width: 200px;
     }
+}
+
+.button-collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .hero {
