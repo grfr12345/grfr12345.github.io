@@ -15,6 +15,10 @@ images:
         width: 800
         height: 534
 
+external_websites:
+    - url: https://finearts-music.unimelb.edu.au/showcase/pile-of-bones
+      name: View on VCA Showcase
+
 description: Pile of Bones examines nurture, love, suppression and mutation, the uprising of inner demons and angels and their influence over our actions.
 
 role: Assistant Stage Manager

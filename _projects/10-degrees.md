@@ -17,6 +17,10 @@ images:
 
 description: A collaborative, interdisciplinary project presented by VCA Dance and Design and Production students.
 
+external_websites:
+    - url: https://finearts-music.unimelb.edu.au/showcase/10-degrees
+      name: View on VCA Showcase
+
 role: Technical Manager
 credits:
     Stage Manager: Rosemary Osmond

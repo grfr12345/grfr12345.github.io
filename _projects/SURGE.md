@@ -15,6 +15,10 @@ images:
         width: 800
         height: 474
 
+external_websites:
+    - url: https://finearts-music.unimelb.edu.au/showcase/surge
+      name: View on VCA Showcase
+
 description: "Moving from order to chaos, from conformity to abandonment"
 
 role: Assistant Stage Manager

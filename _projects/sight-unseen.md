@@ -15,6 +15,11 @@ images:
         width: 800
         height: 442
 
+external_websites:
+    - url: https://finearts-music.unimelb.edu.au/showcase/sight-unseen
+      name: View on VCA Showcase
+
+
 description: "Sight Unseen: without the opportunity to look at the object in question beforehand."
 
 role: Assistant Stage Manager

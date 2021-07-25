@@ -15,6 +15,10 @@ images:
         width: 800
         height: 517
 
+external_websites:
+    - url: https://finearts-music.unimelb.edu.au/showcase/return-to-normal
+      name: View on VCA Showcase
+
 description: "In a year where everyone has had to become accustomed to uncertainty, the feeling of starting and stopping has become a condition of living."
 
 
