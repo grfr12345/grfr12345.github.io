@@ -25,8 +25,9 @@ description: "Sight Unseen: without the opportunity to look at the object in que
 role: Assistant Stage Manager
 credits:
     Choreographer: Linda Sastradipradja
-    Deputy Stage Manager: Rachel Bell
     Lighting Design: Ikshvak Sobti
+    Set and Costume Design: Dominic Brown-Downes
+    Deputy Stage Manager: Rachel Bell
     Assistant Stage Managers: 
         - George Richardson
         - Theo Viney
