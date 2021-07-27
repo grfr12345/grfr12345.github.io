@@ -14,7 +14,7 @@
 
     <script defer src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" integrity="sha384-vuFJ2JiSdUpXLKGK+tDteQZBqNlMwAjhZ3TvPaDfN9QmbPb7Q8qUpbSNapQev3YF" crossorigin="anonymous"></script>
 </head>
-<body class="page-{{ page.title | slugify }}">
+<body class="page-{{ page.title | slugify }}{% if page.hero %} hero{% endif %}{% if page.hero_image %} hero-image{% endif %}{% if page.hero_dark %} hero-dark{% endif %}">
     {% include site-header.html %}
     {% if page.full_width %}
     <div class="container full-width">
