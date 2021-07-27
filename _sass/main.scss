@@ -41,6 +41,24 @@ a:hover, a:focus {
     padding: 0 var(--readable-inset);
 }
 
+.readable {
+    @include readable-inset;
+}
+
+.alternate {
+    background-color: var(--colour-background-secondary);
+}
+
+section:not(.hero) {
+    padding-block-start: 3rem;
+    padding-block-end: 3rem;
+    overflow: auto;
+
+    h1,h2,h3,h4,h5,h6 {
+        margin-block-end: 1.5rem;
+    }
+}
+
 .container {
     padding-block-start: 1.5rem;
     padding-block-end: 1.5rem;
@@ -328,12 +346,23 @@ form {
 }
 
 .hero {
+    min-height: 80vh;
+    display: flex;
+
+    @media (min-width: $breakpoint-small) {
+        min-height: 90vh;
+
+        .hero-image & {
+            min-height: 100vh;
+        }
+    }
 
     &__inner {
         width: 100%;
         @include readable-inset;
 
         display: flex;
+        justify-content: center;
         flex-direction: column;
         gap: 2rem;
 
@@ -361,13 +390,65 @@ form {
     }
 }
 
+.hero-image {
+    section.hero {
+        position: relative;
+        
+        @media screen {
+            
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+                
+                background-image: var(--hero-image);
+                background-position: center;
+                background-position-y: 75%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-clip: border-box;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            z-index: -1;
+            
+            background-color: var(--colour-background);
+        }
+    }
+}
+
 .card-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 3vw;
 
+    $breakpoints: ("sm": $breakpoint-small, "md": $breakpoint-medium, "lg": $breakpoint-large);
+    $type-levels: 1, 2, 3, 4, 5, 6, 7, 8, 9;
+    
+    @each $inital, $breakpoint in $breakpoints {
+        @media (min-width: $breakpoint) {
+            @each $level in $type-levels {
+                // Assign to element and create utility class
+                &.gallery-#{$inital}-#{$level} {
+                    grid-template-columns: repeat(#{$level}, 1fr);
+                }
+            }
+        }
+    }
+    
     list-style: none;
-
+    
     li {
         display: contents;
     }
@@ -381,6 +462,11 @@ form {
             order: 2;
             display: block;
             flex-basis: auto;
+
+            a {
+                text-decoration: inherit;
+                color: inherit;
+            }
         }
         
         &--image {
@@ -399,5 +485,78 @@ form {
                 display: block;
             }
         }
+    }
+
+    // Card variant with opacity overlay on hover.
+    .card-overlay {
+        display: block;
+        position: relative;
+
+        .card--caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.3s ease;
+
+            pointer-events: none;
+            background-color: var(--colour-background-a60);
+
+            .card--title {
+                text-align: center;
+                
+                color: var(--colour-primary);
+                text-shadow: 0 0 30px var(--colour-background);
+            }
+            .card--subtitle {
+                display: none;
+            }
+        }
+
+        .card--image {
+            width: 100%;
+            height: 100%;
+        }
+        
+        @media (hover: hover) {
+
+            .card--caption {
+                opacity: 0;
+
+                .card--title {
+                    text-shadow: 0 0 30px var(--colour-background-a70);
+                    transition: 0.3s ease;
+                    -webkit-transform: translate(0, 1rem);
+                    -moz-transform: translate(0, 1rem);
+                    transform: translate(0, 1rem);
+                }
+            }
+
+            &:hover {
+                .card--caption {
+                    opacity: 1;
+                    
+                    .card--title {
+                        -webkit-transform: translate(0, 0);
+                        -moz-transform: translate(0, 0);
+                        transform: translate(0, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero-dark {
+    .site-header, section.hero {
+        @include colours-dark;
+
+        color: var(--colour-primary);
     }
 }

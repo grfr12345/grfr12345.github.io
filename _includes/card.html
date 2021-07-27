@@ -4,7 +4,7 @@
 {% assign header = "h2" %}
 {% endif %}
 
-<div class="card">
+<article class="card{% if include.class %} {{ include.class }}{% endif %}">
     <div class="card--caption">
         <{{ header }} class="card--title"><a href="{{ include.url }}">{{ include.title }}</a></{{ header }}>
         {% if include.subtitle %}
@@ -12,4 +12,4 @@
         {% endif %}
     </div>
     {% include image.html class="card--image" url=include.url image=include.image %}
-</div>
+</article>

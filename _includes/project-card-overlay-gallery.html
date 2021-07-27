@@ -1,0 +1,7 @@
+<ul class="gallery card-gallery {{ include.class }}">
+    {% for project in site.projects reversed %}
+    <li>
+        {% include card.html class="card-overlay" title=project.title subtitle=project.role url=project.url image=project.images.first header_level=include.header_level %}
+    </li>
+    {% endfor %}
+</ul>

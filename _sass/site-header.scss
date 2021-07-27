@@ -52,7 +52,7 @@
 }
 @media (min-width: 37.5em) {
     .site-header, .site-footer {
-        padding: 3rem 0 2rem;
+        padding: 2.5rem 0;
     }
 }
 .site-header a, .site-footer a {
@@ -108,4 +108,14 @@ body {
 
 .site-footer {
     margin-top: auto;
+}
+
+.hero .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+body.hero-image .site-header {
+    background: linear-gradient(0deg, #0000 0%, var(--colour-background-a60) 60%, var(--colour-background-a60) 100%)
 }

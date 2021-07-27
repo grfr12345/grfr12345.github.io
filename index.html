@@ -3,6 +3,17 @@ layout: base
 title: George Richardson
 
 full_width: true
+hero: true
+hero_image: /assets/images/hero-our-house/hero-our-house.jpg
+hero_image_sizes:
+    0: /assets/images/hero-our-house/hero-our-house-w500.jpg
+    500px: /assets/images/hero-our-house/hero-our-house-w800.jpg
+    800px: /assets/images/hero-our-house/hero-our-house-w1000.jpg
+    1000px: /assets/images/hero-our-house/hero-our-house-w1200.jpg
+    1200px: /assets/images/hero-our-house/hero-our-house-w1500.jpg
+    1500px: /assets/images/hero-our-house/hero-our-house.jpg
+hero_dark: true
+img_loading: lazy
 ---
 <section class="hero align-center">
     <div class="hero__inner">
@@ -14,5 +25,10 @@ full_width: true
             <a href="{% link about.md %}" class="button">About</a>
             <a href="{% link contact.html %}" class="button">Contact</a>
         </div>
+    </div>
+</section>
+<section class="projects">
+    <div class="readable">
+        {% include project-card-overlay-gallery.html class="gallery-sm-2 gallery-md-3" %}
     </div>
 </section>
