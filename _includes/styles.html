@@ -1,2 +1,21 @@
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Source+Code+Pro:wght@400;700&display=swap">
+
+{% assign image_sizes_size = page.hero_image_sizes | size %}
+{% if image_sizes_size != 0 %}
+<style>
+    {% for image_size in page.hero_image_sizes %}
+    @media screen and (min-width: {{ image_size[0] }}) {
+        :root {
+            --hero-image: url('{{ image_size[1] }}')
+        }
+    }
+    {% endfor %}
+</style>
+{% else if page.hero_image %}
+<style>
+    :root {
+        --hero-image: url('{{ page.hero_image }}');
+    }
+</style>
+{% endif %}
