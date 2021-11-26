@@ -9,11 +9,11 @@ images:
     -
         url: /assets/images/the-spook-01.jpg
         width: 1100
-        height: 577
+        height: 733
     -
         url: /assets/images/the-spook-02.jpg
         width: 1100
-        height: 645
+        height: 733
 
 description: A fast-paced, heartfelt show grounded in truth and weighted by our history.
 
