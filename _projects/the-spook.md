@@ -34,5 +34,5 @@ photos: Drew Echberg
 
 Inspired by the true story of a young man who was recruited by ASIO in the 1960s, Melissa Reeves combines raucous comedy, wit, and humour with Australian politics, in a story that is fast-paced and heartfelt. 
 
-Underneath the banter, the scenes and outrageous dialogue, lies some very important themes – communism, conservatism, relationships with others, relationships with oneself, and spying. 
+Underneath the banter, scenes, and outrageous dialogue, lie some very important themes – communism, conservatism, relationships with others, relationships with oneself, and spying. 
 
