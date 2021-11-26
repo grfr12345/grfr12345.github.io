@@ -31,6 +31,7 @@ credits:
         - Robert Watson
         - Tessa Cleary-Moore
     Costume Design: Oliver Lacoon Williamson
+    Associate Lighting Design: Theo Viney
     Technical Manager: George Richardson
     Head Electrician: Seb Miloradovic
 photos: Gregory Lorenzutti
